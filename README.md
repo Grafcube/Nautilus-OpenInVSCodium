@@ -1,48 +1,66 @@
-# Nautilus context menu: Open in VSCode
+> **This is a fork of https://github.com/vvanloc/Nautilus-OpenInVSCode but modified for [VSCodium](https://vscodium.com).**
+
+> **There is no Insiders version of VSCodium.**
+
+# Nautilus context menu: Open in VSCodium
+
 Dependency to install before: `nautilus-python` (`python-nautilus` package on Debian / Ubuntu)
+
 ```bash
 sudo apt install python3-nautilus
 ```
+
 ## Note
-If you install vscode from Snap Store, you must make symbolic links to /usr/bin/code
-```bash
-sudo ln -s /snap/bin/code /usr/bin/code
-```
-or
-```bash
-sudo ln -s $(which code) /usr/bin/code
+
+If you install VSCodium from Snap Store, you must make symbolic links to `/usr/bin/codium`
+
+```sh
+sudo ln -s /snap/bin/codium /usr/bin/codium
 ```
 
-## Install 
-- VSCode:
-    ```bash
-    ./install.sh
-    or
-    sudo ./install.sh
-    ```
-- VSCode Insider:
-    ```bash
-    ./install-insiders.sh
-    or
-    sudo ./install-insiders.sh
-    ```
-## Uninstall 
+or
+
+```sh
+sudo ln -s $(which codium) /usr/bin/codium
+```
+
+## Install
+
+- VSCodium:
+  ```sh
+  ./install.sh
+  or
+  sudo ./install.sh
+  ```
+<!-- - VSCodium Insiders:
+  ```sh
+  ./install-insiders.sh
+  or
+  sudo ./install-insiders.sh
+  ``` -->
+
+## Uninstall
+
 - Current User:
-    ```bash
-    rm ~/.local/share/nautilus-python/extensions/vscode-nautilus.py
-    or
-    rm ~/.local/share/nautilus-python/extensions/vscodeinsiders-nautilus.py
-    ```
+  ```sh
+  rm ~/.local/share/nautilus-python/extensions/vscodium-nautilus.py
+  ```
+  <!-- or
+  rm ~/.local/share/nautilus-python/extensions/vscodiuminsiders-nautilus.py -->
 - All User:
-    ```bash
-    sudo rm /usr/share/nautilus-python/extensions/vscode-nautilus.py
-    or
-    sudo rm /usr/share/nautilus-python/extensions/vscodeinsiders-nautilus.py
-    ```
+  ```sh
+  sudo rm /usr/share/nautilus-python/extensions/vscodium-nautilus.py
+  ```
+  <!-- or
+  sudo rm /usr/share/nautilus-python/extensions/vscodiuminsiders-nautilus.py -->
+
 ### Restart Nautilus
+
 ```bash
 nautilus -q
 ```
+
 # Screenshot
+
 ![](Figures/Screenshot.png "Screenshot")
 ![](Figures/Screenshot.gif "Screenshot")
