@@ -23,7 +23,7 @@ require_version('Nautilus', '3.0')
 from gi.repository import Nautilus, GObject
 from gettext import gettext
 
-CODE = '/usr/bin/code'
+CODE = '/usr/bin/codium'
 
 class VSCodeNautilus(Nautilus.MenuProvider, GObject.GObject):
 	def __init__(self):
@@ -44,7 +44,7 @@ class VSCodeNautilus(Nautilus.MenuProvider, GObject.GObject):
 			if os.path.exists(CODE):
 					items += [self._create_nautilus_item(file)]
 
-		return items 
+		return items
 
 	def get_background_items(self, window, file):
 		"""Returns the menu items to display when no file/folder is selected
@@ -57,15 +57,15 @@ class VSCodeNautilus(Nautilus.MenuProvider, GObject.GObject):
 		return items
 
 	def _create_nautilus_item(self, file):
-		"""Creates the 'Open with VSCode' menu item."""
-		item = Nautilus.MenuItem(name="VSCodeNautilus::Nautilus",
-		                         label=gettext("Open in Code"),
-		                         tip=gettext("Open this folder/file in Visual Studio Code"))
+		"""Creates the 'Open with VSCodium' menu item."""
+		item = Nautilus.MenuItem(name="VSCodiumNautilus::Nautilus",
+		                         label=gettext("Open in Codium"),
+		                         tip=gettext("Open this folder/file in VSCodium"))
 		item.connect("activate", self._nautilus_run, file)
-		return item 
+		return item
 
 	def _nautilus_run(self, menu, file):
-		"""'Open with VSCode' menu item callback."""
+		"""'Open with VSCodium' menu item callback."""
 		uri = file.get_uri()
 		uri = urllib.parse.unquote(uri)
 		uri = uri.replace('file://','')
